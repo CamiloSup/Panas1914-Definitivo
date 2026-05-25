@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,101 +8,94 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <div class="title-section">
-    <h1>Panas 1914: Definitivo</h1>
-    <p id="turn-info">Turno 1 - Año 1914</p>
-  </div>
+  <div class="overlay"></div>
 
-  <button id="next-turn-btn">
-    Siguiente Turno
-  </button>
-</header>
+  <header>
 
-<main>
+    <div>
+      <h1>Panas 1914: Definitivo</h1>
+      <p id="turnText">Turno 1 • Año 1914</p>
+    </div>
 
-  <section class="sidebar">
+    <button id="nextTurn">
+      Siguiente Turno
+    </button>
 
-    <h2>Países</h2>
+  </header>
 
-    <div id="countries-list"></div>
+  <main>
 
-  </section>
+    <aside>
 
-  <section class="main-panel">
+      <h2>Naciones</h2>
 
-    <div class="country-card">
+      <div id="countryList"></div>
 
-      <h2 id="country-name">Alemania</h2>
+    </aside>
 
-      <div class="resources-grid">
+    <section class="panel">
 
-        <div class="resource">
+      <h2 id="countryName">
+        Alemania
+      </h2>
+
+      <div class="resources">
+
+        <div class="card">
           <span>💰 Dinero</span>
           <strong id="money">10</strong>
         </div>
 
-        <div class="resource">
+        <div class="card">
           <span>⛽ Petróleo</span>
           <strong id="oil">5</strong>
         </div>
 
-        <div class="resource">
+        <div class="card">
           <span>🔩 Acero</span>
           <strong id="steel">8</strong>
         </div>
 
-        <div class="resource">
+        <div class="card">
           <span>🍞 Comida</span>
           <strong id="food">12</strong>
         </div>
 
       </div>
 
-      <div class="actions">
+      <div class="buttons">
 
-        <button id="buy-infantry">
+        <button id="buyInfantry">
           Comprar Infantería
         </button>
 
-        <button id="buy-tank">
+        <button id="buyTank">
           Comprar Tanque
         </button>
 
-        <button id="draw-event">
-          Robar Evento
+        <button id="eventButton">
+          Evento
         </button>
 
       </div>
 
-    </div>
+      <div class="news">
 
-    <div class="news-panel">
+        <h3>Noticias Mundiales</h3>
 
-      <h2>Noticias Mundiales</h2>
+        <div id="newsFeed"></div>
 
-      <div id="news-feed">
-        <p>Europa se encuentra en tensión...</p>
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </main>
 
-</main>
-
-<script src="data/countries.js"></script>
-<script src="data/events.js"></script>
-
-<script src="systems/economy.js"></script>
-<script src="systems/military.js"></script>
-<script src="systems/events-system.js"></script>
-<script src="systems/diplomacy.js"></script>
-<script src="systems/turns.js"></script>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
