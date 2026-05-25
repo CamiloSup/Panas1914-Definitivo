@@ -1,5 +1,21 @@
-
 body {
+  margin: 0;
+  background: #0e0e0e;
+  color: #ddd;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1b1b1b;
+  padding: 20px;
+  border-bottom: 2px solid #444;
+}
+
+h1 {
+  margin: 0;
 }
 
 main {
