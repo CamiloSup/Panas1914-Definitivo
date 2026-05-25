@@ -1,39 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panas 1914: Definitivo</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+        <div class="resource">
+          <span>💰 Dinero</span>
+          <strong id="money">10</strong>
+        </div>
 
-  <header>
-    <h1>Panas 1914: Definitivo</h1>
-    <p>Turno 1 - Año 1914</p>
-  </header>
+        <div class="resource">
+          <span>⛽ Petróleo</span>
+          <strong id="oil">5</strong>
+        </div>
 
-  <main>
+        <div class="resource">
+          <span>🔩 Acero</span>
+          <strong id="steel">8</strong>
+        </div>
 
-    <section class="country-panel">
+        <div class="resource">
+          <span>🍞 Comida</span>
+          <strong id="food">12</strong>
+        </div>
 
-      <h2>Alemania</h2>
-
-      <div class="resources">
-        <p>💰 Dinero: <span id="money">10</span></p>
-        <p>⛽ Petróleo: <span id="oil">5</span></p>
-        <p>🔩 Acero: <span id="steel">8</span></p>
       </div>
 
-      <button id="buy-infantry">
-        Comprar Infantería
-      </button>
+      <div class="actions">
 
-    </section>
+        <button id="buy-infantry">
+          Comprar Infantería
+        </button>
 
-  </main>
+        <button id="buy-tank">
+          Comprar Tanque
+        </button>
 
-  <script src="script.js"></script>
+        <button id="draw-event">
+          Robar Evento
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="news-panel">
+
+      <h2>Noticias Mundiales</h2>
+
+      <div id="news-feed">
+        <p>Europa se encuentra en tensión...</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="data/countries.js"></script>
+<script src="data/events.js"></script>
+
+<script src="systems/economy.js"></script>
+<script src="systems/military.js"></script>
+<script src="systems/events-system.js"></script>
+<script src="systems/diplomacy.js"></script>
+<script src="systems/turns.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
