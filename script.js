@@ -1,7 +1,25 @@
-
 let selectedCountry = countries[0];
 
 const countriesList = document.getElementById("countries-list");
+
+function updateUI() {
+
+  document.getElementById("country-name")
+  .textContent = selectedCountry.name;
+
+  document.getElementById("money")
+  .textContent = selectedCountry.money;
+
+  document.getElementById("oil")
+  .textContent = selectedCountry.oil;
+
+  document.getElementById("steel")
+  .textContent = selectedCountry.steel;
+
+  document.getElementById("food")
+  .textContent = selectedCountry.food;
+
+}
 
 function renderCountries() {
 
@@ -19,16 +37,16 @@ function renderCountries() {
 
       selectedCountry = country;
 
-      document.getElementById("country-name")
-      .textContent = country.name;
+      updateUI();
 
-      updateResources(country);
+      addNews(`${country.name} ha sido seleccionado.`);
 
     });
 
     countriesList.appendChild(button);
 
   });
+
 }
 
 function addNews(text) {
@@ -40,35 +58,60 @@ function addNews(text) {
   news.textContent = text;
 
   newsFeed.prepend(news);
-}
 
-renderCountries();
-updateResources(selectedCountry);
+}
 
 document.getElementById("buy-infantry")
 .addEventListener("click", () => {
 
-  buyInfantry(selectedCountry);
+  if (selectedCountry.money >= 2) {
+
+    selectedCountry.money -= 2;
+
+    selectedCountry.infantry += 1;
+
+    updateUI();
+
+    addNews(`${selectedCountry.name} compró infantería.`);
+
+  }
 
 });
 
 document.getElementById("buy-tank")
 .addEventListener("click", () => {
 
-  buyTank(selectedCountry);
+  if (
+    selectedCountry.money >= 5 &&
+    selectedCountry.steel >= 3 &&
+    selectedCountry.oil >= 2
+  ) {
+
+    selectedCountry.money -= 5;
+    selectedCountry.steel -= 3;
+    selectedCountry.oil -= 2;
+
+    selectedCountry.tanks += 1;
+
+    updateUI();
+
+    addNews(`${selectedCountry.name} desplegó un tanque.`);
+
+  }
 
 });
 
 document.getElementById("draw-event")
 .addEventListener("click", () => {
 
-  randomEvent();
+  const random =
+  events[Math.floor(Math.random() * events.length)];
+
+  addNews(
+    `EVENTO: ${random.title} - ${random.description}`
+  );
 
 });
 
-document.getElementById("next-turn-btn")
-.addEventListener("click", () => {
-
-  nextTurn();
-
-});
+renderCountries();
+updateUI();
